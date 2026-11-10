@@ -44,63 +44,86 @@
    "name": "부록",
    "items": [
     {
+     "id": "adr",
+     "title": "A. 설계 결정 기록 (ADR)"
+    },
+    {
+     "id": "spec-v2-full",
+     "title": "B. 기술 스펙 v2 원문"
+    },
+    {
      "id": "changes",
-     "title": "A. v1.0에서 바뀐 것"
-    }
-   ]
-  },
-  {
-   "name": "설계 결정 기록 (ADR)",
-   "items": [
+     "title": "C. v1.0에서 바뀐 것 원문"
+    },
     {
      "id": "adr-0001",
      "file": "adr/adr-0001.md",
-     "title": "0001 ai/ 를 별도 서버가 아닌 로컬 패키지로 둔다"
+     "title": "0001 ai/ 를 별도 서버가 아닌 로컬 패키지로 둔다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0002",
      "file": "adr/adr-0002.md",
-     "title": "0002 격리 환경을 별도 서버로 둔다"
+     "title": "0002 격리 환경을 별도 서버로 둔다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0003",
      "file": "adr/adr-0003.md",
-     "title": "0003 카카오 콜백에 의존한다"
+     "title": "0003 카카오 콜백에 의존한다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0004",
      "file": "adr/adr-0004.md",
-     "title": "0004 LLM 호출 예산은 호출 단계가 소유한다"
+     "title": "0004 LLM 호출 예산은 호출 단계가 소유한다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0005",
      "file": "adr/adr-0005.md",
-     "title": "0005 상세 웹은 만들지 않고 카카오 카드로 끝낸다"
+     "title": "0005 상세 웹은 만들지 않고 카카오 카드로 끝낸다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0006",
      "file": "adr/adr-0006.md",
-     "title": "0006 상세 결과는 1회용 웹페이지로 보여 주고, 카드는 결론과 행동을 지킨다"
+     "title": "0006 상세 결과는 1회용 웹페이지로 보여 주고, 카드는 결론과 행동을 지킨다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0007",
      "file": "adr/adr-0007.md",
-     "title": "0007 링크 추출을 요구 분석 LLM 으로 옮긴다"
+     "title": "0007 링크 추출을 요구 분석 LLM 으로 옮긴다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0008",
      "file": "adr/adr-0008.md",
-     "title": "0008 통화 녹음은 화자를 나누지 않고, 문장 꼴로 받는 사람 쪽 말을 거른다"
+     "title": "0008 통화 녹음은 화자를 나누지 않고, 문장 꼴로 받는 사람 쪽 말을 거른다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0009",
      "file": "adr/adr-0009.md",
-     "title": "0009 브라우저 수집을 거쳐도 기록이 모두 공식이면 공식 판정을 유지한다"
+     "title": "0009 브라우저 수집을 거쳐도 기록이 모두 공식이면 공식 판정을 유지한다",
+     "hidden": true,
+     "parent": "adr"
     },
     {
      "id": "adr-0010",
      "file": "adr/adr-0010.md",
-     "title": "0010 자주 사칭되는 공공기관은 주의까지만 쓴다"
+     "title": "0010 자주 사칭되는 공공기관은 주의까지만 쓴다",
+     "hidden": true,
+     "parent": "adr"
     }
    ]
   }

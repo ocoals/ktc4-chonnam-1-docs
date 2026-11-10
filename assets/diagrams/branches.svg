@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 400" width="1040" height="400" role="img">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1d2330"/></marker>
+  <marker id="arrow-start" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1d2330"/></marker>
+</defs>
+<rect width="1040" height="400" fill="#ffffff"/>
+<text x="24" y="58" font-size="14" font-weight="800" fill="#1d2330" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">main</text>
+<text x="24" y="76" font-size="12" font-weight="500" fill="#5d6677" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">멘토 리뷰를 통과한 결과</text>
+<line x1="250" y1="60" x2="1010" y2="60" stroke="#1d2330" stroke-width="3" stroke-opacity="0.18"/>
+<text x="24" y="128" font-size="14" font-weight="800" fill="#1f4fd8" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">develop</text>
+<text x="24" y="146" font-size="12" font-weight="500" fill="#5d6677" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">통합</text>
+<line x1="250" y1="130" x2="1010" y2="130" stroke="#1f4fd8" stroke-width="3" stroke-opacity="0.18"/>
+<text x="24" y="198" font-size="14" font-weight="800" fill="#16a34a" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">feature/주제</text>
+<text x="24" y="216" font-size="12" font-weight="500" fill="#5d6677" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">한 주의 주제</text>
+<line x1="250" y1="200" x2="1010" y2="200" stroke="#16a34a" stroke-width="3" stroke-opacity="0.18"/>
+<text x="24" y="268" font-size="14" font-weight="800" fill="#65a30d" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">feature/주제-be, -fe, -ai</text>
+<text x="24" y="286" font-size="12" font-weight="500" fill="#5d6677" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">파트별 작업</text>
+<line x1="250" y1="270" x2="1010" y2="270" stroke="#65a30d" stroke-width="3" stroke-opacity="0.18"/>
+<text x="24" y="338" font-size="14" font-weight="800" fill="#d97706" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">refactor/주제</text>
+<text x="24" y="356" font-size="12" font-weight="500" fill="#5d6677" text-anchor="start" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">멘토 피드백 반영</text>
+<line x1="250" y1="340" x2="1010" y2="340" stroke="#d97706" stroke-width="3" stroke-opacity="0.18"/>
+<line x1="250" y1="60" x2="1010" y2="60" stroke="#1d2330" stroke-width="4" stroke-linecap="round"/>
+<line x1="250" y1="130" x2="1010" y2="130" stroke="#1f4fd8" stroke-width="4" stroke-linecap="round"/>
+<path d="M290 130 C315.0 130, 315.0 200, 340 200" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+<line x1="340" y1="200" x2="560" y2="200" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+<path d="M560 200 C585.0 200, 585.0 130, 610 130" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+<path d="M360 200 C380.0 200, 380.0 270, 400 270" fill="none" stroke="#65a30d" stroke-width="4" stroke-linecap="round"/>
+<line x1="400" y1="270" x2="500" y2="270" stroke="#65a30d" stroke-width="4" stroke-linecap="round"/>
+<path d="M500 270 C520.0 270, 520.0 200, 540 200" fill="none" stroke="#65a30d" stroke-width="4" stroke-linecap="round"/>
+<circle cx="420" cy="270" r="7" fill="#fff" stroke="#65a30d" stroke-width="3.5"/>
+<circle cx="450" cy="270" r="7" fill="#fff" stroke="#65a30d" stroke-width="3.5"/>
+<circle cx="480" cy="270" r="7" fill="#fff" stroke="#65a30d" stroke-width="3.5"/>
+<circle cx="540" cy="200" r="7" fill="#fff" stroke="#16a34a" stroke-width="3.5"/>
+<circle cx="610" cy="130" r="9" fill="#fff" stroke="#1f4fd8" stroke-width="3.5"/>
+<text x="450" y="304" font-size="12.5" font-weight="600" fill="#5d6677" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">같은 파트 팀원이 리뷰</text>
+<text x="450" y="184" font-size="12.5" font-weight="600" fill="#5d6677" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">파트 결과를 여기서 맞춰 봄</text>
+<path d="M640 130 C660 130, 660 60, 690 60" fill="none" stroke="#1d2330" stroke-width="2.2" stroke-dasharray="6 5"/>
+<rect x="672" y="16" width="132" height="28" rx="14" fill="#1d2330"/>
+<text x="738" y="35" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">멘토 리뷰 PR</text>
+<path d="M700 130 C725.0 130, 725.0 340, 750 340" fill="none" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+<line x1="750" y1="340" x2="860" y2="340" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+<path d="M860 340 C880.0 340, 880.0 130, 900 130" fill="none" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+<circle cx="785" cy="340" r="7" fill="#fff" stroke="#d97706" stroke-width="3.5"/>
+<circle cx="825" cy="340" r="7" fill="#fff" stroke="#d97706" stroke-width="3.5"/>
+<text x="805" y="370" font-size="12.5" font-weight="600" fill="#5d6677" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">변경 요청 반영</text>
+<circle cx="900" cy="130" r="9" fill="#fff" stroke="#1f4fd8" stroke-width="3.5"/>
+<path d="M915 130 C937.5 130, 937.5 60, 960 60" fill="none" stroke="#1d2330" stroke-width="4" stroke-linecap="round"/>
+<circle cx="960" cy="60" r="9" fill="#fff" stroke="#1d2330" stroke-width="3.5"/>
+<text x="960" y="38" font-size="12.5" font-weight="700" fill="#1d2330" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">승인 후 merge</text>
+</svg>

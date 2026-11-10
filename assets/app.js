@@ -17,13 +17,15 @@
   let currentPage = null;
   const cache = new Map();
 
-  mermaid.initialize({
-    startOnLoad: false,
-    securityLevel: "strict",
-    theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "neutral",
-    flowchart: { htmlLabels: true, curve: "basis" },
-    fontFamily: getComputedStyle(document.body).fontFamily,
-  });
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: "strict",
+      theme: "neutral",
+      flowchart: { htmlLabels: true, curve: "basis" },
+      fontFamily: getComputedStyle(document.body).fontFamily,
+    });
+  }
   marked.use({ gfm: true });
 
   function parseHash() {
@@ -57,6 +59,8 @@
       name.textContent = group.name;
       g.appendChild(name);
       for (const item of group.items) {
+        // hidden 페이지는 목차에 보이지 않고 본문 링크로만 연다.
+        if (item.hidden) continue;
         const a = document.createElement("a");
         a.className = "item";
         a.href = `#${item.id}`;
@@ -70,8 +74,10 @@
   }
 
   function markActive(id) {
+    const item = pages.find((p) => p.id === id);
+    const target = item && item.hidden && item.parent ? item.parent : id;
     for (const a of els.sidebar.querySelectorAll("a.item")) {
-      a.classList.toggle("active", a.dataset.id === id);
+      a.classList.toggle("active", a.dataset.id === target);
     }
     const active = els.sidebar.querySelector("a.item.active");
     if (active) active.scrollIntoView({ block: "nearest" });
@@ -131,12 +137,12 @@
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(n) {
         if (n.parentElement.closest("a, code, pre, .mermaid-wrap, h1, h2, h3")) return NodeFilter.FILTER_REJECT;
-        return /#\d{2,3}|ADR \d{4}/.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        return /#\d{1,3}|ADR \d{4}/.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       },
     });
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
-    const re = /(#(\d{2,3})\b)|(ADR (\d{4}(?:\s?[·,–-]\s?\d{4})*))/g;
+    const re = /(#(\d{1,3})\b)|(ADR (\d{4}(?:\s?[·,–-]\s?\d{4})*))/g;
     for (const node of nodes) {
       const text = node.nodeValue;
       const frag = document.createDocumentFragment();
@@ -277,7 +283,7 @@
         hljs.highlightElement(code);
       }
     }
-    if (diagrams.length) {
+    if (diagrams.length && window.mermaid) {
       try {
         await mermaid.run({ nodes: diagrams });
       } catch (e) {
@@ -310,9 +316,10 @@
   }
 
   function renderPager(item) {
-    const i = pages.indexOf(item);
-    const prev = pages[i - 1];
-    const next = pages[i + 1];
+    const visible = pages.filter((p) => !p.hidden);
+    const i = visible.indexOf(item);
+    const prev = i >= 0 ? visible[i - 1] : null;
+    const next = i >= 0 ? visible[i + 1] : null;
     els.pager.innerHTML = "";
     const add = (p, cls, label) => {
       const a = document.createElement("a");
