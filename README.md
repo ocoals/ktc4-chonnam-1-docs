@@ -15,7 +15,7 @@
 | `assets/repo-meta.json` | 본문의 코드 경로, 커밋 번호를 GitHub 링크로 바꿀 때 쓰는 목록 |
 | `tools/build_meta.py` | 위 목록을 다시 만듭니다 |
 
-빌드 단계가 없는 정적 사이트입니다. Markdown은 브라우저에서 marked로 그리고, 그림은 mermaid로 그립니다.
+빌드 단계가 없는 정적 사이트입니다. Markdown은 브라우저에서 marked로 그리고, 그림은 `tools/diagrams.py` 가 만든 SVG(`assets/diagrams/`)를 씁니다.
 
 ## 로컬에서 보기
 

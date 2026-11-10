@@ -48,12 +48,8 @@
      "title": "A. 설계 결정 기록 (ADR)"
     },
     {
-     "id": "spec-detail",
-     "title": "B. 상세 스펙"
-    },
-    {
      "id": "changes",
-     "title": "C. 처음 설계에서 바뀐 것"
+     "title": "B. 처음 설계에서 바뀐 것"
     },
     {
      "id": "adr-0001",

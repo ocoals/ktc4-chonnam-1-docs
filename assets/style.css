@@ -316,6 +316,7 @@ body.nav-open .sidebar { transform: none; visibility: visible; }
 .status.part { background: #fff4d6; color: #8a5a00; }
 .status.todo { background: #fde8e8; color: #a12b2b; }
 .status.limit { background: #ece9fb; color: #4b3aa8; }
+.status.plan { background: var(--accent-soft); color: var(--accent); }
 
 .loading, .error { color: var(--muted); padding: 40px 0; text-align: center; }
 
@@ -363,6 +364,24 @@ body.nav-open .sidebar { transform: none; visibility: visible; }
 .flow .step i.code { background: #e3f6e8; color: #17723a; }
 .flow .step i.llm { background: #ece9fb; color: #4b3aa8; }
 .flow .step i.ext { background: #fff1e6; color: #b45309; }
+.flow .step:has(em) { display: flex; flex-direction: column; }
+.flow .step em { display: block; margin-top: auto; padding-top: 8px; font-style: normal; font-size: 12.5px; font-weight: 700; color: var(--accent); }
+
+/* 단계 시간을 더한 줄 */
+.flow-total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: -4px 0 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  font-size: 14px;
+}
+.flow-total span { padding: 1px 10px; border-radius: 999px; background: #fff; border: 1px solid #c9d6fb; }
+.flow-total b { font-size: 15px; }
+.flow-total small { flex-basis: 100%; color: var(--muted); font-size: 13px; }
 
 /* ---------- 핵심 숫자 ---------- */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 16px 0; }

@@ -189,7 +189,7 @@
 
   // ---------- 상태 표기 ----------
   function badgeStatus(root) {
-    const kinds = [["미구현", "todo"], ["구현", "ok"], ["부분", "part"], ["제약", "limit"], ["자동", "ok"], ["수동", "part"], ["수집", "ok"], ["추가 필요", "todo"], ["미수집", "todo"]];
+    const kinds = [["구현 예정", "plan"], ["미구현", "todo"], ["구현", "ok"], ["부분", "part"], ["제약", "limit"], ["자동", "ok"], ["수동", "part"], ["수집", "ok"], ["추가 필요", "todo"], ["미수집", "todo"]];
     for (const td of root.querySelectorAll("td:last-child")) {
       const text = td.textContent.trim();
       for (const [word, cls] of kinds) {

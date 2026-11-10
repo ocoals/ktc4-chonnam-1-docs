@@ -125,7 +125,7 @@ def architecture() -> str:
     # 메인 서버
     b.append(group(350, 100, 370, 400, "메인 서버", "render", "Render"))
     b.append(arrow(258, 288, 350, 288, both=True))
-    b.append(text(304, 268, "스킬 요청 5초", 12.5, 600, MUTED))
+    b.append(text(304, 268, "스킬 요청", 12.5, 600, MUTED))
     b.append(text(304, 312, "결과는 콜백", 12.5, 600, MUTED))
     b.append(tile(374, 150, 150, 112, "fastapi", "스킬 서버", "main.py, services/"))
     b.append(tile(548, 150, 150, 112, "python", "ai 패키지", "읽기, 근거 검증"))
@@ -146,21 +146,19 @@ def architecture() -> str:
     b.append(text(945, 232, "방화벽: 443만, 사설 IP 차단", 12.5, 600, MUTED))
     b.append(text(945, 252, "읽기 전용, 권한 제거 컨테이너", 12.5, 600, MUTED))
     b.append(arrow(720, 165, 818, 165, "HTTPS, Bearer", 769, 150))
-    b.append(text(769, 186, "17초 상한", 12.5, 600, MUTED))
     # 의심 링크
     b.append(arrow(945, 276, 945, 322))
     b.append(text(1005, 302, "의심 URL은 여기서만", 12.5, 700, "#c2410c"))
     b.append(globe(945, 352))
     b.append(text(945, 398, "의심 링크 사이트", 14, 700))
     # 외부 AI API
-    b.append(group(820, 430, 250, 132, "외부 AI API", "openai", "OpenAI 호환"))
+    b.append(group(820, 430, 250, 112, "외부 AI API", "openai", "OpenAI 호환"))
     for i, name in enumerate(["LLM", "STT", "임베딩"]):
         x = 840 + i * 76
         b.append(f'<rect x="{x}" y="482" width="64" height="40" rx="10" fill="#ffffff" stroke="{LINE}" stroke-width="1.5"/>')
         b.append(text(x + 32, 507, name, 14, 700))
-    b.append(text(945, 548, "재시도 없음, 단계마다 시간 상한", 12, 600, MUTED))
     b.append(arrow(720, 470, 818, 496))
-    return svg(1100, 590, "\n".join(b))
+    return svg(1100, 570, "\n".join(b))
 
 
 def branches() -> str:
