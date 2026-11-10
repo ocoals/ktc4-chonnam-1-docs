@@ -108,7 +108,16 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--chrome-line);
   color: var(--chrome-text);
 }
-.topbar .home { font-weight: 700; color: #fff; white-space: nowrap; }
+.topbar .home {
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  padding: 4px 10px;
+  margin-left: -6px;
+  border-radius: 8px;
+  transition: background-color .15s;
+}
+.topbar .home:hover { background: var(--chrome-2); text-decoration: none; }
 .topbar .home::before { content: "🛡️ "; }
 .topbar .sep { color: var(--chrome-line); }
 .topbar .portal-name { font-weight: 600; white-space: nowrap; }
