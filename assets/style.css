@@ -389,10 +389,63 @@ body.nav-open .sidebar { transform: none; visibility: visible; }
 .stats strong { display: block; font-size: 24px; letter-spacing: -0.02em; }
 .stats span { color: var(--muted); font-size: 13px; }
 
+/* ---------- 스프린트 타임라인 ---------- */
+.sprints { margin: 18px 0; }
+.sprint { display: grid; grid-template-columns: 104px 1fr; gap: 0 18px; }
+.sprint .when { text-align: right; padding-top: 1px; }
+.sprint .when b { display: block; font-size: 14px; line-height: 1.4; }
+.sprint .when span { display: block; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+.sprint .what { position: relative; border-left: 2px solid var(--line); padding: 0 0 22px 20px; }
+.sprint:last-child .what { padding-bottom: 2px; }
+.sprint .what::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+.sprint:last-child .what::before { background: var(--text); }
+.sprint .what > b { display: block; font-size: 15px; line-height: 1.45; }
+.sprint .what p { margin: 5px 0 0; font-size: 14px; line-height: 1.6; }
+.sprint .what p i {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 1px 8px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: var(--code-bg);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.sprint .what p i.fix { background: var(--accent-soft); color: var(--accent); }
+@media (max-width: 560px) {
+  .sprint { grid-template-columns: 1fr; }
+  .sprint .when { text-align: left; border-left: 2px solid var(--line); padding: 0 0 4px 20px; }
+  .sprint .when b, .sprint .when span { display: inline; margin-right: 6px; }
+}
+
 /* ---------- 접기 ---------- */
 .doc details { border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; margin: 12px 0; }
 .doc details summary { cursor: pointer; font-weight: 700; }
 .doc details[open] summary { margin-bottom: 8px; }
+/* 피드백을 받은 회차 표시 */
+.doc .round {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 0 8px;
+  margin-right: 4px;
+  border-radius: 999px;
+  background: var(--code-bg);
+  color: var(--muted);
+  white-space: nowrap;
+}
 @media (max-width: 760px) {
   .figure { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .figure img { width: 720px; max-width: none; }

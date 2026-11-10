@@ -5,13 +5,6 @@ FE, BE, AI 세 파트가 한 주에 하나의 주제를 함께 만들었습니�
 
 <figure class="figure"><img src="/assets/diagrams/branches.svg" alt="브랜치 흐름: 파트 브랜치가 주제 브랜치로, 주제 브랜치가 develop으로 합쳐지고, develop에서 main으로 멘토 리뷰 PR을 올린 뒤 refactor 브랜치에서 피드백을 반영하고 승인 후 merge"></figure>
 
-<div class="stats">
-  <div><strong>112개</strong><span>merge된 PR</span></div>
-  <div><strong>67개</strong><span>그중 주제 브랜치로 들어간 PR</span></div>
-  <div><strong>7회</strong><span>develop → main 멘토 리뷰</span></div>
-  <div><strong>92.6%</strong><span>커밋 규칙을 지킨 커밋</span></div>
-</div>
-
 ## 브랜치
 
 | 브랜치 | 용도 |
@@ -22,7 +15,9 @@ FE, BE, AI 세 파트가 한 주에 하나의 주제를 함께 만들었습니�
 | `feature/<주제>-be`, `-fe`, `-ai` | 파트별 작업. 같은 파트 팀원이 리뷰합니다 |
 | `refactor/<주제>` | 멘토 피드백 반영. 구조는 `feature` 와 같습니다 |
 | `fix/<내용>` | 버그, 보안 수정 |
-| `test/render` | Render 배포용 |
+| `test/render` | Render 테스트 배포용. 계속 쓸 배포 브랜치가 아니라 시연 전 테스트를 위해 둔 브랜치입니다 |
+
+> **남은 일**: 지금은 Render가 `test/render` 를 배포합니다. 앞으로 배포 브랜치를 `main` 으로 바꿔, 멘토 승인을 받은 결과만 배포되게 해야 합니다.
 
 ## 커밋 메시지
 
