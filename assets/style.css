@@ -212,10 +212,22 @@ body.nav-open .sidebar { transform: none; visibility: visible; }
 }
 @media (min-width: 1400px) { .toc { display: block; } }
 .toc .toc-title { font-weight: 700; color: var(--muted); margin-bottom: 8px; font-size: 12px; }
-.toc a { display: block; color: var(--muted); padding: 3px 0 3px 10px; border-left: 2px solid var(--line); line-height: 1.45; }
-.toc a.h3 { padding-left: 22px; font-size: 12.5px; }
+.toc-list { position: relative; border-left: 2px solid var(--line); }
+.toc-marker {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: transform .25s ease, height .25s ease, opacity .2s;
+}
+.toc a { display: block; color: var(--muted); padding: 4px 0 4px 12px; line-height: 1.45; transition: color .2s; }
+.toc a.h3 { padding-left: 24px; font-size: 12.5px; }
 .toc a:hover { color: var(--accent); text-decoration: none; }
-.toc a.active { color: var(--accent); border-left-color: var(--accent); }
+.toc a.active { color: var(--accent); font-weight: 600; }
 
 /* 이전, 다음: 상자 없이 한 줄 */
 .pager {

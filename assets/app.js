@@ -305,15 +305,35 @@
     title.className = "toc-title";
     title.textContent = "이 페이지";
     frag.appendChild(title);
+    // 목록 왼쪽 선 위를 파란 막대(toc-marker)가 지금 읽는 절로 미끄러지듯 옮겨 간다.
+    const list = document.createElement("div");
+    list.className = "toc-list";
+    const marker = document.createElement("span");
+    marker.className = "toc-marker";
+    list.appendChild(marker);
     for (const h of heads) {
       const a = document.createElement("a");
       a.href = `#${currentPage}/${h.id}`;
       a.className = h.tagName.toLowerCase();
       a.dataset.target = h.id;
       a.textContent = h.textContent;
-      frag.appendChild(a);
+      list.appendChild(a);
     }
+    frag.appendChild(list);
     els.toc.replaceChildren(frag);
+  }
+
+  function moveTocMarker(current) {
+    const marker = els.toc.querySelector(".toc-marker");
+    if (!marker || !current) return;
+    marker.style.transform = `translateY(${current.offsetTop}px)`;
+    marker.style.height = `${current.offsetHeight}px`;
+    marker.style.opacity = "1";
+    // 목차가 길면 지금 절이 목차 안에서 보이도록 함께 스크롤한다.
+    const top = current.offsetTop + current.parentElement.offsetTop;
+    const bottom = top + current.offsetHeight;
+    if (top < els.toc.scrollTop + 40) els.toc.scrollTop = Math.max(0, top - 40);
+    else if (bottom > els.toc.scrollTop + els.toc.clientHeight - 40) els.toc.scrollTop = bottom - els.toc.clientHeight + 40;
   }
 
   function renderPager(item) {
@@ -344,15 +364,24 @@
     if (pinned && links.some((a) => a.dataset.target === pinned)) {
       current = links.find((a) => a.dataset.target === pinned);
     } else {
-      const line = Math.min(160, window.innerHeight * 0.3);
+      // 기준선은 보통 화면 위쪽이지만, 페이지 끝에 가까워지면 화면 아래로 천천히 내린다.
+      // 그래야 위로 올라오지 못하는 끝부분 절들도 차례로 표시된다.
+      const base = Math.min(160, window.innerHeight * 0.3);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const zone = window.innerHeight * 0.6;
+      const remaining = maxScroll - window.scrollY;
+      let line = base;
+      if (maxScroll > 0 && remaining < zone) {
+        const t = 1 - Math.max(0, remaining) / zone;
+        line = base + (window.innerHeight - 60 - base) * t;
+      }
       for (const a of links) {
         const h = document.getElementById(a.dataset.target);
         if (h && h.getBoundingClientRect().top <= line) current = a;
       }
-      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-      if (atBottom && window.scrollY > 0) current = links[links.length - 1];
     }
     for (const a of links) a.classList.toggle("active", a === current);
+    moveTocMarker(current);
   }
   // 제목이 열 개 남짓이라 스크롤마다 바로 계산해도 가볍다.
   window.addEventListener("scroll", updateToc, { passive: true });
