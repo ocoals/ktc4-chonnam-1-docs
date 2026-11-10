@@ -34,7 +34,7 @@
 <rect x="425" y="306" width="48" height="36" rx="6" fill="#eaf0ff" stroke="#1f4fd8" stroke-width="1.6"/>
 <line x1="433" y1="318" x2="465" y2="318" stroke="#1f4fd8" stroke-width="1.6"/><line x1="433" y1="330" x2="458" y2="330" stroke="#1f4fd8" stroke-width="1.6"/>
 <rect x="548" y="290" width="150" height="112" rx="14" fill="#ffffff" stroke="#d5dae3" stroke-width="1.5"/>
-<text x="623.0" y="366" font-size="15" font-weight="700" fill="#1d2330" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">사례 검색 (RAG)</text>
+<text x="623.0" y="366" font-size="15" font-weight="700" fill="#1d2330" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">RAG</text>
 <text x="623.0" y="385" font-size="12" font-weight="500" fill="#5d6677" text-anchor="middle" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">피해 사례 629건</text>
 <ellipse cx="623" cy="309" rx="22" ry="7" fill="#e3f6e8" stroke="#17723a" stroke-width="1.6"/><path d="M601 309 v24 a22 7 0 0 0 44 0 v-24" fill="#e3f6e8" stroke="#17723a" stroke-width="1.6"/>
 <rect x="374" y="424" width="324" height="52" rx="12" fill="#1d2330"/>

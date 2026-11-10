@@ -133,7 +133,7 @@ def architecture() -> str:
     b.append(tile(374, 290, 150, 112, None, "작업 저장", "결과 확인 조회"))
     b.append(f'<rect x="425" y="306" width="48" height="36" rx="6" fill="#eaf0ff" stroke="{ACCENT}" stroke-width="1.6"/>')
     b.append(f'<line x1="433" y1="318" x2="465" y2="318" stroke="{ACCENT}" stroke-width="1.6"/><line x1="433" y1="330" x2="458" y2="330" stroke="{ACCENT}" stroke-width="1.6"/>')
-    b.append(tile(548, 290, 150, 112, None, "사례 검색 (RAG)", "피해 사례 629건"))
+    b.append(tile(548, 290, 150, 112, None, "RAG", "피해 사례 629건"))
     b.append(f'<ellipse cx="623" cy="309" rx="22" ry="7" fill="#e3f6e8" stroke="#17723a" stroke-width="1.6"/>'
              f'<path d="M601 309 v24 a22 7 0 0 0 44 0 v-24" fill="#e3f6e8" stroke="#17723a" stroke-width="1.6"/>')
     b.append(f'<rect x="374" y="424" width="324" height="52" rx="12" fill="#1d2330"/>')
