@@ -238,7 +238,7 @@
     } else {
       window.scrollTo(0, 0);
     }
-    document.body.classList.remove("nav-open");
+    closeNavIfNarrow();
   }
 
   async function decorate(root) {
@@ -321,16 +321,15 @@
     const prev = i >= 0 ? visible[i - 1] : null;
     const next = i >= 0 ? visible[i + 1] : null;
     els.pager.innerHTML = "";
-    const add = (p, cls, label) => {
+    const add = (p, cls, text) => {
       const a = document.createElement("a");
       a.className = cls;
       a.href = `#${p.id}`;
-      a.innerHTML = `<small>${label}</small>`;
-      a.appendChild(document.createTextNode(p.title));
+      a.textContent = text;
       els.pager.appendChild(a);
     };
-    if (prev) add(prev, "prev", "← 이전"); else els.pager.appendChild(document.createElement("span"));
-    if (next) add(next, "next", "다음 →");
+    if (prev) add(prev, "prev", `← ${prev.title}`);
+    if (next) add(next, "next", `${next.title} →`);
   }
 
   // 스크롤 위치에 맞춰 오른쪽 목차를 표시한다.
@@ -350,9 +349,26 @@
     });
   });
 
+  // 목차 열기, 닫기. 본문을 가리지 않을 만큼 넓은 화면에서는 처음에 열어 두고, 사용자가 고른 상태를 기억한다.
+  const WIDE = "(min-width: 1440px)";
+  const NAV_KEY = "docs-nav-open";
+  function readNavPref() {
+    try { return localStorage.getItem(NAV_KEY); } catch { return null; }
+  }
+  function saveNavPref(open) {
+    try { localStorage.setItem(NAV_KEY, open ? "1" : "0"); } catch { /* 저장 못 해도 동작에는 지장 없다 */ }
+  }
+  const pref = readNavPref();
+  if (window.matchMedia(WIDE).matches && pref !== "0") document.body.classList.add("nav-open");
+
   document.getElementById("menu-btn").addEventListener("click", () => {
-    document.body.classList.toggle("nav-open");
+    const open = document.body.classList.toggle("nav-open");
+    if (window.matchMedia(WIDE).matches) saveNavPref(open);
   });
+  // 좁은 화면에서는 목차가 본문을 가리므로 페이지를 고르면 닫는다.
+  function closeNavIfNarrow() {
+    if (!window.matchMedia(WIDE).matches) document.body.classList.remove("nav-open");
+  }
 
   window.addEventListener("hashchange", () => {
     const { page, heading } = parseHash();
