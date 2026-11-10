@@ -1,0 +1,13 @@
+{
+ "title": "협업문서",
+ "subtitle": "화기니 팀이 일한 방식",
+ "groups": [
+  {"name": "시작", "items": [{"id": "overview", "title": "개요와 팀 소개"}]},
+  {"name": "약속과 규칙", "items": [
+    {"id": "ground-rules", "title": "그라운드 룰"},
+    {"id": "branch-strategy", "title": "브랜치 전략"},
+    {"id": "coding-convention", "title": "코딩 컨벤션"}
+  ]},
+  {"name": "기록", "items": [{"id": "code-review", "title": "코드 리뷰 기록"}]}
+ ]
+}
