@@ -128,7 +128,7 @@
         continue;
       }
       const hit = resolvePath(text);
-      if (hit) wrapLink(code, githubLink(hit.path, hit.dir), `${hit.path} (기준 커밋 ${meta.base})`);
+      if (hit) wrapLink(code, githubLink(hit.path, hit.dir), hit.path);
     }
   }
 
@@ -238,6 +238,7 @@
     } else {
       window.scrollTo(0, 0);
     }
+    updateToc();
     closeNavIfNarrow();
   }
 
@@ -333,20 +334,34 @@
   }
 
   // 스크롤 위치에 맞춰 오른쪽 목차를 표시한다.
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      ticking = false;
-      const links = [...els.toc.querySelectorAll("a")];
-      let current = null;
+  // 마지막 절들은 화면 위쪽까지 올라오지 못하므로, 바닥에 닿으면 마지막 절을 고른다.
+  // 목차를 눌러 이동했으면 사용자가 다시 스크롤하기 전까지 누른 절을 유지한다.
+  let pinned = null;
+  function updateToc() {
+    const links = [...els.toc.querySelectorAll("a")];
+    if (!links.length) return;
+    let current = links[0];
+    if (pinned && links.some((a) => a.dataset.target === pinned)) {
+      current = links.find((a) => a.dataset.target === pinned);
+    } else {
+      const line = Math.min(160, window.innerHeight * 0.3);
       for (const a of links) {
         const h = document.getElementById(a.dataset.target);
-        if (h && h.getBoundingClientRect().top < 120) current = a;
+        if (h && h.getBoundingClientRect().top <= line) current = a;
       }
-      for (const a of links) a.classList.toggle("active", a === current);
-    });
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atBottom && window.scrollY > 0) current = links[links.length - 1];
+    }
+    for (const a of links) a.classList.toggle("active", a === current);
+  }
+  // 제목이 열 개 남짓이라 스크롤마다 바로 계산해도 가볍다.
+  window.addEventListener("scroll", updateToc, { passive: true });
+  for (const ev of ["wheel", "touchmove", "keydown"]) {
+    window.addEventListener(ev, () => { pinned = null; }, { passive: true });
+  }
+  els.toc.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) pinned = a.dataset.target;
   });
 
   // 목차 열기, 닫기. 본문을 가리지 않을 만큼 넓은 화면에서는 처음에 열어 두고, 사용자가 고른 상태를 기억한다.

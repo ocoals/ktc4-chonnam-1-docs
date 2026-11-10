@@ -67,4 +67,4 @@ Authorization: Bearer <ISOLATION_API_TOKEN>
 - `answer`: `no_risk_found`, `risk_found`, `partial`, `failed`, `not_run`
 - 신호의 `evidence` 는 원문에 실제로 있는 문장이어야 채택됩니다.
 
-전체 필드와 링크 없는 문자, 통화 결과 형식은 [원문 6장](#spec-v2-full/6-인터페이스-명세)에 있습니다.
+전체 필드와 링크 없는 문자, 통화 결과 형식은 [원문 6장](#spec-detail/6-인터페이스-명세)에 있습니다.

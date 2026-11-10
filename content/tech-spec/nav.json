@@ -1,6 +1,6 @@
 {
  "title": "테크스펙",
- "subtitle": "화기니 기술 스펙 v2 (실제 서비스 기준)",
+ "subtitle": "화기니 테크스펙",
  "groups": [
   {
    "name": "시작",
@@ -48,12 +48,12 @@
      "title": "A. 설계 결정 기록 (ADR)"
     },
     {
-     "id": "spec-v2-full",
-     "title": "B. 기술 스펙 v2 원문"
+     "id": "spec-detail",
+     "title": "B. 상세 스펙"
     },
     {
      "id": "changes",
-     "title": "C. v1.0에서 바뀐 것 원문"
+     "title": "C. 처음 설계에서 바뀐 것"
     },
     {
      "id": "adr-0001",
