@@ -26,7 +26,7 @@ BRAND = {
     "amazonec2": "#FF9900",
     "render": "#000000",
     "googlechrome": "#4285F4",
-    "openai": "#111111",
+    "claude": "#D97757",
     "github": "#181717",
     "githubactions": "#2088FF",
     "git": "#F05032",
@@ -152,7 +152,7 @@ def architecture() -> str:
     b.append(globe(945, 352))
     b.append(text(945, 398, "의심 링크 사이트", 14, 700))
     # 외부 AI API
-    b.append(group(820, 430, 250, 112, "외부 AI API", "openai", "OpenAI 호환"))
+    b.append(group(820, 430, 250, 112, "외부 AI API", "claude", "엘리스 ML API"))
     for i, name in enumerate(["LLM", "STT", "임베딩"]):
         x = 840 + i * 76
         b.append(f'<rect x="{x}" y="482" width="64" height="40" rx="10" fill="#ffffff" stroke="{LINE}" stroke-width="1.5"/>')
