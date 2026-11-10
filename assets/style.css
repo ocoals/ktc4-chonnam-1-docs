@@ -366,3 +366,5 @@ body.nav-open .sidebar { transform: none; visibility: visible; }
   .figure { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .figure img { width: 720px; max-width: none; }
 }
+.doc th[align="center"], .doc td[align="center"] { text-align: center; }
+.doc th[align="right"], .doc td[align="right"] { text-align: right; }
