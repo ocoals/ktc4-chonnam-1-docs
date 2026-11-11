@@ -8,11 +8,11 @@ import json
 import re
 import subprocess
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parent.parent
 TEAM_REPO = Path(sys.argv[1])
-BASE = "45871b8"
+BASE = "ed667c3"
 REPO_URL = "https://github.com/kakaotechcampus-4/ktc4-chonnam-1"
 
 
@@ -23,7 +23,8 @@ def git(*args: str) -> str:
 
 files = [f for f in git("ls-tree", "-r", "--name-only", BASE).splitlines()
          if not f.startswith("docs/archive/")]
-dirs = sorted({str(Path(f).parent) for f in files if "/" in f})
+# git 경로는 늘 "/" 로 나뉜다. Path 를 쓰면 Windows 에서 "\" 로 바뀌어 폴더 링크가 걸리지 않는다.
+dirs = sorted({str(PurePosixPath(f).parent) for f in files if "/" in f})
 # 상위 폴더까지 모두 넣는다 (infra/ 같은 것).
 all_dirs = set()
 for d in dirs:

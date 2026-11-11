@@ -31,4 +31,4 @@ python3 -m http.server 4173
 python3 tools/build_meta.py ../ktc4-chonnam-1
 ```
 
-문서의 코드 경로와 커밋은 팀 저장소의 기준 커밋 `45871b8` 시점으로 열립니다.
+문서의 코드 경로와 커밋은 팀 저장소의 기준 커밋 `ed667c3`(2026-11-11 `develop`) 시점으로 열립니다.

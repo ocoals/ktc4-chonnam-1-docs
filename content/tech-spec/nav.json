@@ -120,6 +120,13 @@
      "title": "0010 자주 사칭되는 공공기관은 주의까지만 쓴다",
      "hidden": true,
      "parent": "adr"
+    },
+    {
+     "id": "adr-0011",
+     "file": "adr/adr-0011.md",
+     "title": "0011 공식 주소 목록은 소유 근거가 있는 기관만, 조금씩 넓힌다",
+     "hidden": true,
+     "parent": "adr"
     }
    ]
   }

@@ -97,7 +97,7 @@ Authorization: Bearer <ISOLATION_API_TOKEN>
 | `read_message` | 업체, 요구, 링크 추출과 원문 대조 | `MessageReading` | 15초 |
 | `analyze_message_part` | 사례 검색과 문자 위험 신호 제안 | `MessagePart` | 검색 2.5초 |
 | `finalize_analysis` | 페이지 검사와 페이지 신호 제안, 결과 조립 | `AnalysisResponse` | 검사 1초, LLM 5초 |
-| `analyze_message_case` | 링크 없는 문자 분석 | `MessageCaseResult` | 남은 시간 |
+| `analyze_message_case` | 링크 없는 문자 분석. 판단을 보류한 링크 문자의 주의 판단에도 씁니다(`has_link=True`) | `MessageCaseResult` | 남은 시간 |
 | `transcribe_call` | 받아쓰기, 문장 나누기, 개인정보 가리기 | `TranscriptResult` | 30초 |
 | `analyze_call` | 통화 분석 | `VoiceCaseResult` | 남은 시간 |
 
@@ -127,4 +127,6 @@ Authorization: Bearer <ISOLATION_API_TOKEN>
 | `stop_actions`, `response_actions` | 멈춰야 할 행동, 이미 했을 때의 대응 |
 | `questions` | 붙일 질문 카드 |
 | `checked`, `unchecked` | 확인한 것, 확인하지 못한 것 |
-| `similar_cases`, `official_contact` | 비슷한 사례, 공식 대표번호 |
+| `similar_cases`, `official_contact` | 비슷한 사례(사례마다 수법 유형 `type`), 공식 대표번호 |
+
+근거 코드에는 링크가 있는 문자에서만 쓰는 미끼 두 가지(`account_lock_lure` 계정 정지 해제, `lottery_lure` 로또 당첨)가 있습니다. 둘 다 결론은 판단 보류(`inconclusive`)로 두고 주의(`caution`)만 켭니다.
